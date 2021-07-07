@@ -3,13 +3,14 @@ package Timer
 import Task "github.com/skkim-01/task"
 
 // NewTimer : Create new timer
-func NewTimer(task *Task.Task, intv int64, cnt int) *Timer {
+func NewTimer(task *Task.Task, intv int64, cnt int, isFirstRunning bool) *Timer {
 	t := Timer{
-		timerTask: task,
-		interval:  intv,
-		count:     cnt,
-		eventChan: make(chan int),
-		state:     STATE_STOP,
+		timerTask:      task,
+		interval:       intv,
+		count:          cnt,
+		eventChan:      make(chan int),
+		state:          STATE_STOP,
+		isFirstRunning: isFirstRunning,
 	}
 	return &t
 }

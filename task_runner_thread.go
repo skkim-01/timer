@@ -15,6 +15,10 @@ _START_SECTION:
 		goto _EXIT
 	}
 
+	if true == t.isFirstRunning && 0 == invokeCount {
+		t._invokeTimer(&invokeCount)
+	}
+
 	// channel wait
 	select {
 	// case timeout

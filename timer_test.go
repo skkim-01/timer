@@ -31,7 +31,7 @@ func Test_timer_done(t *testing.T) {
 	defer t1.Close()
 
 	// Create New Timer
-	timer := NewTimer(t1, 1000, 3)
+	timer := NewTimer(t1, 1000, 3, false)
 
 	timer.Start()
 
@@ -53,7 +53,7 @@ func Test_timer_interrupt(t *testing.T) {
 	defer t1.Close()
 
 	// Create New Timer
-	timer := NewTimer(t1, 1000, 0)
+	timer := NewTimer(t1, 1000, 0, true)
 
 	timer.Start()
 

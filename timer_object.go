@@ -15,9 +15,10 @@ const (
 
 // Timer : struct for timer object
 type Timer struct {
-	timerTask *Task.Task // timer task
-	interval  int64      // timer running interval - milli-second
-	count     int        // timer running count. [0: infinity]
-	eventChan chan int   // timer handling event channel
-	state     int        // timer state.
+	timerTask      *Task.Task // timer task
+	interval       int64      // timer running interval - milli-second
+	count          int        // timer running count. [0: infinity]
+	eventChan      chan int   // timer handling event channel
+	state          int        // timer state.
+	isFirstRunning bool       // flag for running task when start timer
 }
